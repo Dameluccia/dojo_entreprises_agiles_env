@@ -1,0 +1,18 @@
+{
+  "name": "static",
+  "authors": [
+    "Dameluccia <lucieanaisbarthes@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
