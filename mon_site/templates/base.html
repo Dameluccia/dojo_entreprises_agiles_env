@@ -5,11 +5,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/static/css/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 
     <title>{% block title %}{% endblock title %}</title>
 
+    <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
 </head>
 
 <body>
@@ -21,9 +24,6 @@
         {% include "footer.html" %}
 
 
-    <script type="text/javascript" src="/static/js/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/static/js/script.js"></script>
 </body>
 
 </html>
