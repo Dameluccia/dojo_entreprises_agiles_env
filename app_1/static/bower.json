@@ -1,5 +1,6 @@
 {
   "name": "static",
+  "homepage": "https://github.com/Dameluccia/dojo_entreprises_agiles_env",
   "authors": [
     "Dameluccia <lucieanaisbarthes@gmail.com>"
   ],
@@ -7,12 +8,14 @@
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
 }
