@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_1',
-    'timelinejs'
+    'timelinejs',
+    'ckeditor',
+    'ckeditor_uploader',
+    'leaflet'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -123,3 +126,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
 )
+
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+LEAFLET_CONFIG = {
+# 'SPATIAL_EXTENT': (44.518007, 3.430770, 44.575751, 3.453429),
+'DEFAULT_CENTER': (44.516190, 3.395212),
+'DEFAULT_ZOOM': 10,
+'MIN_ZOOM': 3,
+'MAX_ZOOM': 18,
+'MINIMAP': True,
+    # conf here
+}

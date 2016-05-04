@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+
+{% block content %}
+
+
+{% leaflet_map "portrait" callback="window.map_init_basic" %}
+
+
+{%endblock content%}

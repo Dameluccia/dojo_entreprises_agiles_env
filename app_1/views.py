@@ -7,3 +7,6 @@ def discussions(request):
 
 def homepage(request):
     return render(request, "homepage.html")
+
+def portrait(request):
+    return render(request, "portrait.html")
