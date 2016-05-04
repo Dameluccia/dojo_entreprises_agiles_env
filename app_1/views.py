@@ -5,3 +5,6 @@ def homepage(request):
 
 def discussions(request):
     return render(request, 'discussions.html')
+
+def portrait(request):
+    return render(request, "portrait.html")
