@@ -19,13 +19,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
+
     url(r'^', include('app_1.urls')),
+    url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('userena.urls')),
 
-=======
-    url(r'^', include("app_1.urls")),
-    
->>>>>>> 6ec25f7162385f4d768021d294acee420b516e8a
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

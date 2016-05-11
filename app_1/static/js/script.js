@@ -11,10 +11,6 @@ function map_init_basic (map, options) {
        var marker9 = L.marker([44.559026, 3.499538]).addTo(map);
 
 
-
-
-
-
        marker1.bindPopup("<b>Alban TIBERGHIEN</b><br>TiersTruck-Social numérique<br> 48000 Mende").openPopup();
 
        marker2.bindPopup("<b>Dominique SERIEYS</b></br><a href='http://sbsaveyron.com'>sbsaveyron</a> : Artisan bijoutier, <br>13 bd des Balquières, 12850 ONET LE "  ).openPopup();
@@ -33,5 +29,5 @@ function map_init_basic (map, options) {
 
         marker9.bindPopup("<b>Nicolas DELRIEU</b></br>DELRIEU INGENIERIE : BE, conception 3D, dessin indus, calculs RDM, calculs Eurocodes<br>chemin du Pous 48000 CHASTEL-NOUVEL"  ).openPopup();
 
-       mymap.on('click', onMapClick);
+        mymap.on('click', onMapClick);
    }
