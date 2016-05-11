@@ -15,12 +15,16 @@ form input {
   border-radius: 5px;
 }
 
-li {
+ul {
+  padding: 0;
+}
+ul li {
   list-style-type: none;
 }
 
 footer {
   padding: 3em;
+  background-color: #F8F8F8;
 }
 
 .social:hover {
