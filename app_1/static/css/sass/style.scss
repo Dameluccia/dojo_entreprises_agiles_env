@@ -20,15 +20,19 @@ form{
     }
 }
 
+ul{
+    padding: 0;
+    li{
+        list-style-type: none;
+    }
 
-li{
-    list-style-type: none;
 }
 //footer
 
 
 footer{
     padding: 3em;
+    background-color: #F8F8F8;
 }
 .social:hover {
      -webkit-transform: scale(1.1);
