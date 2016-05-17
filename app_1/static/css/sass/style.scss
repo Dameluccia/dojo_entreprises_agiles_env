@@ -15,8 +15,18 @@ form{
     margin: auto;
     text-align: center;
     padding:2em 1em;
+    button{
+        text-align: center;
+    }
     input{
         border-radius: 5px;
+        display: list-item;
+    }
+    label{
+        display: table;
+    }
+    p{
+        text-align: -webkit-center;
     }
 }
 
@@ -24,6 +34,7 @@ ul{
     padding: 0;
     li{
         list-style-type: none;
+
     }
 
 }

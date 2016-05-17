@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
+from forms import SignupFormExtra
 
 urlpatterns = [
 
@@ -24,6 +25,6 @@ urlpatterns = [
 
     url(r'^', include('app_1.urls')),
 
+    url(r'^accounts/mysignup/$','userena.views.signup',{'signup_form': SignupFormExtra}, name="my_signup"),
     url(r'^accounts/', include('userena.urls')),
-
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

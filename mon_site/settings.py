@@ -11,12 +11,24 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+#
+# from site_settings import DATABASES
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 LANGUAGE_CODE = 'fr-FR'
 
+
+DATABASES = {
+    'default': {
+        'NAME': 'dojoagile',
+        'ENGINE': 'django.contrib.gis.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'azerty',
+        'ROOT' : 'localhost'
+    }
+}
 TIME_ZONE = 'CET'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -40,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+     'django.contrib.gis',
     'app_1',
     'userena',
     'guardian',
@@ -48,7 +61,8 @@ INSTALLED_APPS = [
     'timelinejs',
     'ckeditor',
     'ckeditor_uploader',
-    'leaflet'
+    'leaflet',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -101,12 +115,6 @@ WSGI_APPLICATION = 'mon_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -160,3 +168,9 @@ LEAFLET_CONFIG = {
 'MINIMAP': True,
     # conf here
 }
+
+SITE_ID = 1
+
+USERENA_ACTIVATION_REQUIRED = False
+USERENA_WITHOUT_USERNAMES = True
+USERENA_MUGSHOT_DEFAULT = 'monsterid'

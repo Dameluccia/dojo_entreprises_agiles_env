@@ -11,8 +11,18 @@ form {
   text-align: center;
   padding: 2em 1em;
 }
+form button {
+  text-align: center;
+}
 form input {
   border-radius: 5px;
+  display: list-item;
+}
+form label {
+  display: table;
+}
+form p {
+  text-align: -webkit-center;
 }
 
 ul {

@@ -3,16 +3,16 @@
         <a class="navbar-brand" href="#">Dojo entreprises agiles</a>
     </div>
     <ul class="nav navbar-nav">
-        <li class="active"><a href="/homepage">Accueil</a></li>
-        <li><a href="/discussions">Discussions</a></li>
-        <li><a href="/portrait">Portraits</a></li>
+        <li class="active"><a href="{% url 'homepage' %}">Accueil</a></li>
+        <li><a href="{% url 'discussions' %}">Discussions</a></li>
+        <li><a href="{% url 'portrait' %}">Portraits</a></li>
         <li><a href="#">Savoirs</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
 
     <ul class="pull-right nav navbar-nav">
-        <li><a href="accounts/signup/">Inscription</a></li>
-        <li><a href="accounts/signin/">Se connecter</a></li>
+        <li><a href="{% url 'my_signup' %}">Inscription</a></li>
+        <li><a href="{% url 'userena_signin' %}">Se connecter</a></li>
 
     </ul>
 </nav>
