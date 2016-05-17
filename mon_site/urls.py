@@ -20,11 +20,10 @@ from django.conf import settings
 from forms import SignupFormExtra
 
 urlpatterns = [
-
     url(r'^admin/', admin.site.urls),
-
     url(r'^', include('app_1.urls')),
 
     url(r'^accounts/mysignup/$','userena.views.signup',{'signup_form': SignupFormExtra}, name="my_signup"),
+
     url(r'^accounts/', include('userena.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
