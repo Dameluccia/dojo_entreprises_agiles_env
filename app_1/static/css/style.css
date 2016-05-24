@@ -3,6 +3,26 @@
   min-height: 400px !important;
 }
 
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.navbar-default .navbar-brand {
+  font-family: 'Ravi Prakash', cursive;
+  font-size: 25px;
+  font-weight: bold;
+  color: #0d072a;
+}
+
+.background_header {
+  background-image: url("/static/img/dojobg1.jpg");
+  height: 20em;
+  background-size: cover;
+  background-position-y: -7em;
+}
+
 form {
   border: 2px solid #757575;
   border-radius: 10px;
@@ -32,6 +52,20 @@ ul li {
   list-style-type: none;
 }
 
+.thumbnail {
+  text-align: center;
+}
+.thumbnail i {
+  margin: auto;
+  font-size: -webkit-xxx-large;
+  width: 100%;
+}
+
+.thumbnail .caption {
+  overflow: scroll;
+  height: 17em;
+}
+
 footer {
   padding: 3em;
   background-color: #F8F8F8;
@@ -54,7 +88,7 @@ footer {
 }
 
 /*
-    Multicoloured Hover Variations
+Multicoloured Hover Variations
 */
 #social-fb:hover {
   color: #3B5998;

@@ -1,11 +1,27 @@
 .leaflet-container-default {  /* all maps */
 
-        min-height: 400px !important;
-    }
+    min-height: 400px !important;
+}
 
 
+*{
+    padding: 0px;
+    margin:0px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.navbar-default .navbar-brand{
 
-
+    font-family: 'Ravi Prakash', cursive;
+    font-size:25px;
+    font-weight: bold;
+    color: #0d072a;
+}
+.background_header{
+    background-image: url("/static/img/dojobg1.jpg");
+    height: 20em;
+    background-size: cover;
+    background-position-y: -7em;
+}
 //signup form
 
 form{
@@ -38,44 +54,60 @@ ul{
     }
 
 }
-//footer
+//font-awesome
 
+.thumbnail{
+    text-align: center;
+    i{
+        margin: auto;
+        font-size: -webkit-xxx-large;
+        width: 100%;
 
-footer{
-    padding: 3em;
-    background-color: #F8F8F8;
+    }
 }
-.social:hover {
-     -webkit-transform: scale(1.1);
-     -moz-transform: scale(1.1);
-     -o-transform: scale(1.1);
- }
- .social {
-     -webkit-transform: scale(0.8);
-     /* Browser Variations: */
+.thumbnail .caption{
+    overflow: scroll;
+    height: 17em;
+}
 
-     -moz-transform: scale(0.8);
-     -o-transform: scale(0.8);
-     -webkit-transition-duration: 0.5s;
-     -moz-transition-duration: 0.5s;
-     -o-transition-duration: 0.5s;
- }
+    //footer
 
-/*
+
+    footer{
+        padding: 3em;
+        background-color: #F8F8F8;
+    }
+    .social:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+    .social {
+        -webkit-transform: scale(0.8);
+        /* Browser Variations: */
+
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+    }
+
+    /*
     Multicoloured Hover Variations
-*/
+    */
 
 
- #social-fb:hover {
-     color: #3B5998;
+    #social-fb:hover {
+        color: #3B5998;
 
- }
- #social-tw:hover {
-     color: #4099FF;
- }
- #social-gp:hover {
-     color: #d34836;
- }
- #social-em:hover {
-     color: #f39c12;
- }
+    }
+    #social-tw:hover {
+        color: #4099FF;
+    }
+    #social-gp:hover {
+        color: #d34836;
+    }
+    #social-em:hover {
+        color: #f39c12;
+    }

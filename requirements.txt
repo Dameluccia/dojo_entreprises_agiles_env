@@ -1,5 +1,6 @@
 Django==1.9.6
 -e git+https://github.com/abdallah/django-timelinejs.git@eba0c154031620aecadfe34573ccc297201714ae#egg=Django_TimelineJS-master
+MySQL-python==1.2.5
 Pillow==3.2.0
 argparse==1.2.1
 django-ckeditor==5.0.3
@@ -7,6 +8,7 @@ django-guardian==1.4.1
 -e git+https://github.com/makinacorpus/django-leaflet.git@9c3bca655e40306f96a45618aa1d296f1bea8316#egg=django_leaflet-master
 django-userena==2.0.1
 easy-thumbnails==2.3
+geopy==1.11.0
 html2text==2014.12.29
 six==1.10.0
 wsgiref==0.1.2

@@ -1,3 +1,10 @@
+$(document).ready( function() {
+
+    $('.navi').stickUp();
+
+});
+
+
 // function map_init_basic (map, options) {
 //
 //        {% for profil in profiles %}
