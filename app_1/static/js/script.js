@@ -23,9 +23,9 @@ $(document).ready( function() {
     //    var marker9 = L.marker([44.559026, 3.499538]).addTo(map);
        //
        //
-    //    marker1.bindPopup("<b>Alban TIBERGHIEN</b><br>TiersTruck-Social numérique<br> 48000 Mende").openPopup();
+    //    marker1.bindPopup("<b></b><br><br> 48000 Mende").openPopup();
        //
-    //    marker2.bindPopup("<b>Dominique SERIEYS</b></br><a href='http://sbsaveyron.com'>sbsaveyron</a> : Artisan bijoutier, <br>13 bd des Balquières, 12850 ONET LE "  ).openPopup();
+    //    marker2.bindPopup("<b>Dominique </b></br><a href='http://sbsaveyron.com'>sbsaveyron</a> : Artisan bijoutier, <br>13 bd des Balquières, 12850 ONET LE "  ).openPopup();
        //
     //    marker3.bindPopup("<b>Olivier DE BECHEVEL</b></br><a href='http://www.or-des-chemins.fr/'>or-des-chemins</a> :Matériel de photocopieurs, de reprographie<br>Ld Sainte Colombe de Montauroux 48600 Grandrieu"  ).openPopup();
        //

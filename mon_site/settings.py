@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-
 from site_settings import DATABASES
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -166,4 +165,4 @@ SITE_ID = 1
 
 USERENA_ACTIVATION_REQUIRED = False
 USERENA_WITHOUT_USERNAMES = True
-USERENA_MUGSHOT_DEFAULT = 'monsterid'
+# USERENA_MUGSHOT_DEFAULT = 'monsterid'

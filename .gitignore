@@ -3,4 +3,4 @@ bower_components
 media
 *.db
 *.sqlite3
-site_settings.py
+mon_site/site_settings.py
