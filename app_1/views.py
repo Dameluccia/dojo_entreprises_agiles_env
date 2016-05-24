@@ -2,6 +2,11 @@ from django.shortcuts import render
 from accounts.models import MyProfile
 from timelinejs.models import Timeline, TimelineEvent
 
+
+
+
+
+
 def homepage(request):
 
     timeline = Timeline.objects.get(id=1)
@@ -14,7 +19,7 @@ def homepage(request):
         )
     else :
         return render(request, 'homepage.html')
-    
+
 
 
 def discussions(request):
