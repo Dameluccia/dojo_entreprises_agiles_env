@@ -44,7 +44,7 @@ def contact(request):
             email = contact_form.cleaned_data["email"]
             subject = contact_form.cleaned_data["subject"]
             message = contact_form.cleaned_data["message"]
-            send_mail(subject, message, email, ["admin@plop.fr"], fail_silently=False)
+            send_mail(subject, message, email, ["frederic.mirman@gmail.com"], fail_silently=False)
             return HttpResponseRedirect("/contact/merci")
     else:
         contact_form = ContactForm()

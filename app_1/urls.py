@@ -1,11 +1,9 @@
-from django.conf.urls import include, url
+from django.conf.urls import *
 from django.views.generic import TemplateView
 
 from views import homepage, discussions, portrait, savoirs, contact
-from timelinejs.views import TimelineView
-
-from django.conf.urls import *
 from voting.views import vote_on_object
+from timelinejs.views import TimelineView
 from timelinejs.models import TimelineEvent
 
 event_dict = {
