@@ -7,11 +7,6 @@ from timelinejs.models import Timeline, TimelineEvent
 from forms import ContactForm
 
 
-
-
-
-
-
 def homepage(request):
 
     timeline = Timeline.objects.get(id=1)
@@ -23,7 +18,7 @@ def homepage(request):
                         "homepage.html",
                         {"timeline_event_next":timeline_event[0], "timeline_event_last":timeline_event[1]})
     else :
-        return render(request, "homepage.html")
+        return render(request, 'homepage.html')
 
 
 def discussions(request):
