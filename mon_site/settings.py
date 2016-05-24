@@ -19,16 +19,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 LANGUAGE_CODE = 'fr-FR'
 
-
 DATABASES = {
     'default': {
-        'NAME': 'dojoagile',
         'ENGINE': 'django.contrib.gis.db.backends.mysql',
+        'NAME': 'dojoagile',
         'USER': 'root',
-        'PASSWORD': 'azerty',
-        'ROOT' : 'localhost'
+        'PASSWORD': 'root',
+        'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
+        'PORT': '8888',
     }
 }
+
 TIME_ZONE = 'CET'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-     'django.contrib.gis',
+    'django.contrib.gis',
     'app_1',
     'userena',
     'guardian',

@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}
-
-
-{% endblock title %}
+{% block title %}Dojo Entreprises Agiles{% endblock title %}
 
 {% block content %}
 
@@ -15,66 +12,65 @@
                 <h3>Dernier évènement</h3>
                 <div class="caption">
                     <p>{{timeline_event_last.text|safe}}</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Voir</a>
-                    </div>
+                    <p><a href="{% url 'discussions' %}#{{timeline_event_last.id|safe}}" class="btn btn-primary" role="button">Voir</a></p>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="thumbnail">
-                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                    <h3>Prochain évènement</h3>
-                    <div class="caption">
-                        <p>{{timeline_event_next.text|safe}}</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Voir</a> <a href="#" class="btn btn-default" role="button">S'inscrire</a></p>
-                    </div>
-                </div>
-            </div>
-
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <ul>
-                    <div class="well">Technologie/ Savoir-faire</div>
-                    <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
-                    <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <button  class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
-                </ul>
+        <div class="col-md-6">
+            <div class="thumbnail">
+                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                <h3>Prochain évènement</h3>
+                <div class="caption">
+                    <p>{{timeline_event_next.text|safe}}</p>
+                    <p>
+                        <a href="{% url 'discussions' %}#{{timeline_event_next.id|safe}}" class="btn btn-primary" role="button">Voir</a>
+                        <a href="#" class="btn btn-default" role="button">S'inscrire</a>
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <ul>
-                    <div class="well">Commercial/ Finance</div>
-                    <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
-                    <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <button class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
-                </ul>
-
-            </div>
-            <div class="col-md-4 text-center">
-                <ul>
-                    <div class="well">Management/ Logistique</div>
-                    <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
-                    <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
-                    <button type="button" style="margin-top:1em" class="btn btn-success" name="button">Votez</button>
-                </ul>
-
-            </div>
-
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <ul>
+                <div class="well">Technologie/ Savoir-faire</div>
+                <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
+                <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
+                <button class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
+            </ul>
+        </div>
+        <div class="col-md-4 text-center">
+            <ul>
+                <div class="well">Commercial/ Finance</div>
+                <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
+                <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
+                <button class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
+            </ul>
+        </div>
+        <div class="col-md-4 text-center">
+            <ul>
+                <div class="well">Management/ Logistique</div>
+                <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
+                <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
+                <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
+                <button class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
+            </ul>
+        </div>
+    </div>
+</div>
 
-    {% endblock content %}
+{% endblock content %}

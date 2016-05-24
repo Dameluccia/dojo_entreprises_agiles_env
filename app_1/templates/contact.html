@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+
+<form action="/contact" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Contact</legend>
+        {% for field in form %}
+        <p>
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.errors }}
+            {% if field.help_text %}
+                <p class="help-text">
+                    {{ field.help_text }}
+                </p>
+            {% endif %}
+        </p>
+        {% endfor %}
+        <button type="submit">Envoyer</button>
+    </fieldset>
+</form>
+
+{% endblock content %}
