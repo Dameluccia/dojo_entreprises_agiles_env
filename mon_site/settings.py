@@ -12,23 +12,15 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 #
-# from site_settings import DATABASES
+from site_settings import DATABASES
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 LANGUAGE_CODE = 'fr-FR'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.mysql',
-        'NAME': 'dojoagile',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
-        'PORT': '8888',
-    }
-}
 
 TIME_ZONE = 'CET'
 # Quick-start development settings - unsuitable for production
@@ -152,10 +144,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
@@ -175,4 +170,4 @@ SITE_ID = 1
 
 USERENA_ACTIVATION_REQUIRED = False
 USERENA_WITHOUT_USERNAMES = True
-USERENA_MUGSHOT_DEFAULT = 'monsterid'
+# USERENA_MUGSHOT_DEFAULT = 'monsterid'

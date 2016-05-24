@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% load voting_tags %}
 
 
@@ -17,7 +18,7 @@
                <h3>Dernier évènement</h3>
                <div class="caption">
                    <p>{{timeline_event_last.text|safe}}</p>
-                   <p><a href="#" class="btn btn-primary" role="button">Voir</a>
+                   <p><a href="{% url 'discussions'%}#{{timeline_event_last.id|safe}}" class="btn btn-primary" role="button">Voir</a>
                    </div>
                </div>
            </div>
@@ -27,7 +28,7 @@
                    <h3>Prochain évènement</h3>
                    <div class="caption">
                        <p>{{timeline_event_next.text|safe}}</p>
-                       <p><a href="#" class="btn btn-primary" role="button">Voir</a> <a href="#" class="btn btn-default" role="button">S'inscrire</a></p>
+                       <p><a href="{% url 'discussions'%}#{{timeline_event_next.id|safe}}" class="btn btn-primary" role="button">Voir</a> <a href="#" class="btn btn-default" role="button">S'inscrire</a></p>
                    </div>
                </div>
            </div>
@@ -46,6 +47,8 @@
                    <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
                    <button  class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
                </ul> -->
+               <div class="well">Technologie/ Savoir-faire</div>
+
                {% score_for_object object as score %}
                <h5>Votes
                    <span id="score">{{ score.score }}</span>
@@ -53,13 +56,12 @@
                    <span id="num_votes">{{ score.num_votes }}</span>
                    vote{{ score.num_votes|pluralize }}
                </h5>
-
-<ul>
-   <li><a href="#" onclick="vote('{{ object.slug }}', 'up');">I like it!</a></li>
-   <li><a href="#" onclick="vote('{{ object.slug }}', 'down');">I hate it!</a></li>
-   <li><a href="#" onclick="vote('{{ object.slug }}', 'clear');">I take it back! Clear my vote.</a></li>
-</ul>
-           </div>
+            <ul>
+               <li><a href="#" onclick="vote('{{ object.slug }}', 'up');">I like it!</a></li>
+               <li><a href="#" onclick="vote('{{ object.slug }}', 'down');">I hate it!</a></li>
+               <li><a href="#" onclick="vote('{{ object.slug }}', 'clear');">I take it back! Clear my vote.</a></li>
+            </ul>
+        </div>
            <div class="col-md-4 text-center">
                <ul>
                    <div class="well">Commercial/ Finance</div>
@@ -91,6 +93,7 @@
 
        </div>
    </div>
+</div>
    {% endblock content %}
    <script type="text/javascript">
 

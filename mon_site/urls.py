@@ -26,4 +26,4 @@ urlpatterns = [
     url(r'^accounts/mysignup/$','userena.views.signup',{'signup_form': SignupFormExtra}, name="my_signup"),
 
     url(r'^accounts/', include('userena.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
