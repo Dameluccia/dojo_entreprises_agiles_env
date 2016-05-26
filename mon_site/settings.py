@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'leaflet',
-    'voting'
+    'voting',
+    'vote_app'
 
 ]
 

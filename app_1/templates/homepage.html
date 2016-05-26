@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load voting_tags %}
+
 
 {% block title %}{% endblock title %}
 
@@ -30,81 +30,4 @@
            </div>
 
        </div>
-       <div class="row">
-           <div class="col-md-4 text-center">
-               <!-- <ul>
-                   <div class="well">Technologie/ Savoir-faire</div>
-                   <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
-                   <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <button  class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
-               </ul> -->
-               <div class="well">Technologie/ Savoir-faire</div>
-
-               {% score_for_object object as score %}
-               <h5>Votes
-                   <span id="score">{{ score.score }}</span>
-                   point{{ score.score|pluralize }} after
-                   <span id="num_votes">{{ score.num_votes }}</span>
-                   vote{{ score.num_votes|pluralize }}
-               </h5>
-            <ul>
-               <li><a href="#" onclick="vote('{{ object.slug }}', 'up');">I like it!</a></li>
-               <li><a href="#" onclick="vote('{{ object.slug }}', 'down');">I hate it!</a></li>
-               <li><a href="#" onclick="vote('{{ object.slug }}', 'clear');">I take it back! Clear my vote.</a></li>
-            </ul>
-        </div>
-           <div class="col-md-4 text-center">
-               <ul>
-                   <div class="well">Commercial/ Finance</div>
-                   <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
-                   <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <button class="btn btn-success"  style="margin-top:1em" type="button" name="button">Votez</button>
-               </ul>
-
-           </div>
-           <div class="col-md-4 text-center">
-               <ul>
-                   <div class="well">Management/ Logistique</div>
-                   <li>Sujet 1  <input type="radio"  name="inlineRadioOptions"></li>
-                   <li>Sujet 2  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 3  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 4  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 5  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 6  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <li>Sujet 7  <input type="radio"  name="inlineRadioOptions"> </li>
-                   <button type="button" style="margin-top:1em" class="btn btn-success" name="button">Votez</button>
-               </ul>
-
-           </div>
-
-       </div>
-   </div>
-</div>
-   {% endblock content %}
-<script type="text/javascript">
-function vote(slug, direction) {
-    $.post(
-        '/tips/'+slug+'/'+direction+'vote/',
-        {HTTP_X_REQUESTED:'XMLHttpRequest'},
-        function(data) {
-            if (data.success == true) {
-                $('#score').text(data.score.score);
-                $('#num_votes').text(data.score.num_votes);
-            } else {
-                alert('ERROR: ' + data.error_message);
-            }
-        },
-        'json'
-    )
-}
-</script>
+      {% endblock %}
