@@ -32,7 +32,10 @@ class MyProfile(UserenaBaseProfile):
 
 @receiver(pre_save, sender=MyProfile)
 def address_geocoding(sender,instance,**kwargs):
-    geolocator = GoogleV3(api_key='AIzaSyD5xRfZ-oRSqtsfOo9Cpj-eRHT5V8BbfqA', domain='maps.googleapis.com', scheme='https', client_id=None, secret_key=None, timeout=1, proxies=None)
-    location = geolocator.geocode("%s " % (instance.adresse_activite))
-    # print(location.raw)
-    instance.gps = fromstr('POINT(%s %s)' % (location.longitude, location.latitude))
+    try:
+        geolocator = GoogleV3(api_key='AIzaSyD5xRfZ-oRSqtsfOo9Cpj-eRHT5V8BbfqA', domain='maps.googleapis.com', scheme='https', client_id=None, secret_key=None, timeout=1, proxies=None)
+        location = geolocator.geocode("%s " % (instance.adresse_activite))
+        # print(location.raw)
+        instance.gps = fromstr('POINT(%s %s)' % (location.longitude, location.latitude))
+    except:
+        pass

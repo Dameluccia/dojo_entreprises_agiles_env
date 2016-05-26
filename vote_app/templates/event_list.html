@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+{% load voting_tags staticfiles%}
+
+{% block content %}
+<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.min.js' %} "></script>
+<div class="row">
+{% for categorie in categories%}
+<div class="col-md-4 text-center">
+    <h2>{{categorie.nom}}</h2>
+    <ul>
+        {% for sujet in object_list%}
+        {% vote_by_user request.user on sujet as vote %}
+        {%if sujet.categorie == categorie%}
+        <li>{{sujet.subject}}
+            {% score_for_object sujet as score %}
+            <span id="score{{sujet.id}}">{{ score.score }}</span>/<span id="num_votes{{sujet.id}}">{{ score.num_votes }}</span>
+            {% if request.user.is_authenticated %}
+                {% if vote.vote == 1%}
+                    <span style="color:red;">+1</span>
+                {% else %}
+                    <a href="#" onclick="vote('{{ sujet.id }}', 'up');">+1</a>
+                {% endif %}
+                <a href="#" onclick="vote('{{ sujet.id }}', 'clear');">=</a>
+
+                {% if vote.vote == -1%}
+                    <span style="color:red;">-1</span>
+                {% else %}
+                    <a href="#" onclick="vote('{{ sujet.id }}', 'down');">-1</a>
+                {% endif %}
+            {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endfor %}
+</div>
+<script>
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function vote(id, direction) {
+    $.ajax({
+        type: "POST",
+        url: "/test/sujet/vote/"+id+"/"+direction+'vote/',
+        headers : {
+            "HTTP_X_REQUESTED":'XMLHttpRequest',
+            "X-CSRFToken" : getCookie('csrftoken'),
+        },
+        success: function(data) {
+            console.log(data);
+            if (data.success == true) {
+                $('#score'+id).text(data.score.score);
+                $('#num_votes'+id).text(data.score.num_votes);
+            } else {
+                alert('ERROR: ' + data.error_message);
+            }
+        },
+        dataType: "json"
+    });
+}
+</script>
+{% endblock content %}
