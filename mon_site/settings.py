@@ -158,7 +158,7 @@ LEAFLET_CONFIG = {
 'DEFAULT_ZOOM': 10,
 'MIN_ZOOM': 3,
 'MAX_ZOOM': 18,
-'MINIMAP': True,
+
     # conf here
 }
 
