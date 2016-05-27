@@ -22,10 +22,9 @@ h1 {
 }
 
 .background_header {
-  background-image: url("/static/img/dojobg1.jpg");
-  height: 20em;
-  background-size: cover;
-  background-position-y: -7em;
+    background: url("/static/img/dojo_header.png");
+    background-size: cover;
+    height: 30em;
 }
 
 form {
