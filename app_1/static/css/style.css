@@ -16,6 +16,11 @@ h1 {
   font-family: 'Ravi Prakash', cursive;
 }
 
+h2 {
+  color: #FF630F;
+  font-family: 'Ravi Prakash', cursive;
+}
+
 .navbar-default .navbar-brand {
   padding-top: 0;
 }
@@ -73,6 +78,13 @@ ul li {
 .thumbnail .caption {
   overflow: overlay;
   height: 17em;
+}
+
+.row {
+  margin: 13px;
+  border: 9px double #326e8c;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 footer {

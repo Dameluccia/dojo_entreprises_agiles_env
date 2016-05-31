@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load voting_tags staticfiles%}
+{% load staticfiles %}
 
 {% block content %}
 <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.min.js' %} "></script>
@@ -16,18 +17,18 @@
             <span id="score{{sujet.id}}">{{ score.score }}</span>/<span id="num_votes{{sujet.id}}">{{ score.num_votes }}</span>
             {% if request.user.is_authenticated %}
                 {% if vote.vote == 1%}
-                    <span style="color:red;">+1</span>
+                    <span style="color:red;"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</span>
                 {% else %}
-                    <a href="#" onclick="vote('{{ sujet.id }}', 'up');">+1</a>
+                    <a href="#" onclick="vote('{{ sujet.id }}', 'up');"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</a>
                 {% endif %}
-                <a href="#" onclick="vote('{{ sujet.id }}', 'clear');">=</a>
 
                 {% if vote.vote == -1%}
-                    <span style="color:red;">-1</span>
+                    <span style="color:red;"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</span>
                 {% else %}
-                    <a href="#" onclick="vote('{{ sujet.id }}', 'down');">-1</a>
+                    <a href="#" onclick="vote('{{ sujet.id }}', 'down');"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</a>
                 {% endif %}
             {% endif %}
+            <a href="#" onclick="vote('{{ sujet.id }}', 'clear');"><i class="fa fa-hand-o-left" aria-hidden="true"></i>0</a>
         </li>
         {% endif %}
         {% endfor %}

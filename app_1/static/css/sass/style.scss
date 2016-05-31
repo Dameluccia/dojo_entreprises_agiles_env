@@ -12,6 +12,11 @@ h1 {
     text-align: center;
     font-family: 'Ravi Prakash', cursive;
 }
+h2{
+    color: #FF630F;
+    font-family: 'Ravi Prakash', cursive;
+
+}
 .navbar-default .navbar-brand {
     padding-top: 0;
     img {
@@ -67,6 +72,15 @@ ul {
     overflow: overlay;
     height: 17em;
 }
+//vote
+
+.row{
+    margin: 13px;
+    border: 9px double #326e8c;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 //footer
 
 
