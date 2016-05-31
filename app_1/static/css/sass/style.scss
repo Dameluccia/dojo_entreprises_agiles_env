@@ -80,7 +80,8 @@ ul{
 
 
 footer{
-    padding: 3em;
+    margin-top: 2em;
+    padding: 1em;
     background-color: #F8F8F8;
 }
 .social:hover {
@@ -97,6 +98,7 @@ footer{
     -webkit-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
+    margin-bottom: 0.4em;
 }
 
 /*
@@ -116,4 +118,7 @@ Multicoloured Hover Variations
 }
 #social-em:hover {
     color: #f39c12;
+}
+#social-yt:hover {
+    color: #f60606;
 }
