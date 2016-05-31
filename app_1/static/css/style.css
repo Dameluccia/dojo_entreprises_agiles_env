@@ -17,16 +17,19 @@ h1 {
 }
 
 .navbar-default .navbar-brand {
-  font-family: 'Ravi Prakash', cursive;
-  font-size: 25px;
-  font-weight: bold;
-  color: #0d072a;
+  padding-top: 0;
+}
+.navbar-default .navbar-brand img {
+  height: 125%;
+  padding-top: 8px;
 }
 
 .background_header {
-    background: url("/static/img/dojo_header.png");
-    background-size: cover;
-    height: 30em;
+  background: url("/static/img/entete-web.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 560px;
 }
 
 form {

@@ -1,85 +1,74 @@
 .leaflet-container-default {  /* all maps */
-
     position: relative;
     width: 95em;
     margin: auto;
 }
-
-
-*{
+* {
     padding: 0px;
     margin:0px;
     font-family: 'Titillium Web', sans-serif;
 }
-h1{
+h1 {
     text-align: center;
     font-family: 'Ravi Prakash', cursive;
-
 }
-.navbar-default .navbar-brand{
-
-    font-family: 'Ravi Prakash', cursive;
-    font-size:25px;
-    font-weight: bold;
-    color: #0d072a;
+.navbar-default .navbar-brand {
+    padding-top: 0;
+    img {
+        height: 125%;
+        padding-top: 8px;
+    }
 }
-.background_header{
-    background: url("/static/img/dojo_header.png");
+.background_header {
+    background: url("/static/img/entete-web.png");
     background-size: cover;
-    height: 30em;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 560px;
 }
 //signup form
-
-form{
+form {
     border:2px solid #757575;
     border-radius: 10px;
     width: 50%;
     margin: auto;
     text-align: center;
     padding:2em 1em;
-    button{
+    button {
         text-align: center;
     }
-    input{
+    input {
         border-radius: 5px;
         display: list-item;
     }
-    label{
+    label {
         display: table;
     }
-    p{
+    p {
         text-align: -webkit-center;
     }
 }
-
-ul{
+ul {
     padding: 0;
-    li{
+    li {
         list-style-type: none;
-
     }
-
 }
 //font-awesome
-
-.thumbnail{
+.thumbnail {
     text-align: center;
-    i{
+    i {
         margin: auto;
         font-size: -webkit-xxx-large;
         width: 100%;
-
     }
 }
-.thumbnail .caption{
+.thumbnail .caption {
     overflow: overlay;
     height: 17em;
 }
-
 //footer
-
-
-footer{
+footer {
     padding: 3em;
     background-color: #F8F8F8;
 }
@@ -91,22 +80,17 @@ footer{
 .social {
     -webkit-transform: scale(0.8);
     /* Browser Variations: */
-
     -moz-transform: scale(0.8);
     -o-transform: scale(0.8);
     -webkit-transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
 }
-
 /*
 Multicoloured Hover Variations
 */
-
-
 #social-fb:hover {
     color: #3B5998;
-
 }
 #social-tw:hover {
     color: #4099FF;
