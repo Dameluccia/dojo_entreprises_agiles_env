@@ -11,6 +11,8 @@ event_dict = {
 }
 
 urlpatterns = [
-    url(r'^$', SujetVoteList.as_view(), name="savoirs"),
-    url(r'^sujet/vote/(?P<object_id>\d+)/(?P<direction>up|down|clear)vote/?$', vote_on_object, event_dict, name='vote-on-event'),
+
+    url(r'^$', SujetVoteList.as_view(), name='savoirs'),
+    url(r'^vote/(?P<object_id>\d+)/(?P<direction>up|down|clear)vote/?$', vote_on_object, event_dict, name='vote-on-event'),
+
 ]

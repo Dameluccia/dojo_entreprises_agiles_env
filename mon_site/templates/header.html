@@ -1,11 +1,12 @@
+{% load staticfiles %}
 <header>
     <div class="background_header">
-
+        <img src="{% static 'img/entete-web.png' %}" />
     </div>
 
     <nav class="navbar navbar-default navi">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'homepage' %}"><img src="/static/img/logoDojoClair.png" /></a>
+            <a class="navbar-brand" href="{% url 'homepage' %}"><img src="{% static 'img/logoDojoClair.png' %}" /></a>
         </div>
         <ul class="nav navbar-nav">
             <li><a href="{% url 'homepage' %}">Accueil</a></li>
@@ -16,6 +17,7 @@
         </ul>
         <ul class="pull-right nav navbar-nav">
             {% if request.user.is_authenticated %}
+            <li><a href="/accounts/{{request.user.username}}">Mon profil</a></li>
             <li><a href="{% url 'userena_signout' %}">Se déconnecter</a></li>
             {% else %}
             <li><a href="{% url 'my_signup' %}">Inscription</a></li>

@@ -21,6 +21,15 @@ h2 {
   font-family: 'Ravi Prakash', cursive;
 }
 
+.navbar-default {
+  font-size: 1.5em;
+  border: none;
+}
+
+.navbar-default .navbar-nav li a {
+  color: #FF5B01;
+}
+
 .navbar-default .navbar-brand {
   padding-top: 0;
 }
@@ -29,12 +38,8 @@ h2 {
   padding-top: 8px;
 }
 
-.background_header {
-  background: url("/static/img/entete-web.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 560px;
+div.background_header img {
+  width: 100%;
 }
 
 form {
