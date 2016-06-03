@@ -12,7 +12,7 @@
     {% for profil in profiles %}
         {% if forloop.counter0|divisibleby:3 %}</div><div class="row">{% endif %}
         <div class="col-md-4">
-            <div class="panel panel-info">
+            <div class="panel panel-default">
                 <div class="panel-heading">{{profil.prenom}} {{profil.nom}}</div>
                 <div class="panel-body">
                     <div class="row">
@@ -45,7 +45,7 @@
 function map_init_basic (map, options) {
     {% for profil in profiles %}
     var marker1 = L.marker([{{profil.gps.y|stringformat:"f"}}, {{profil.gps.x|stringformat:"f"}}]).addTo(map);
-    marker1.bindPopup("<b>{{profil.prenom}} {{profil.nom}}</b><br>{{profil.nom_activite}}<br> {{profil.adresse_activite}}").openPopup();
+    marker1.bindPopup("<b>{{profil.prenom}} {{profil.nom}}</b><br>{{profil.nom_activite}}<br> {{profil.adresse_activite}}");
     {% endfor%}
 }
 </script>

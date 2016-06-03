@@ -4,31 +4,41 @@
 
 {% block content %}
 <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.min.js' %} "></script>
-<div class="row">
-{% for categorie in categories%}
-<div class="col-md-4 text-center">
-    <h2>{{categorie.nom}}</h2>
-    <ul>
-        {% for sujet in object_list%}
-        {% vote_by_user request.user on sujet as vote %}
-        {%if sujet.categorie == categorie%}
-        <li>{{sujet.subject}}
-            {% score_for_object sujet as score %}
-            <span id="score{{sujet.id}}">{{ score.score }}</span>/<span id="num_votes{{sujet.id}}">{{ score.num_votes }}</span>
-            {% if request.user.is_authenticated %}
-                {% if vote.vote == 1%}
-                    <span style="color:red;"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</span>
-                {% else %}
-                    <a href="#" onclick="vote('{{ sujet.id }}', 'up');"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</a>
-                {% endif %}
+<h1>Votez !</h1>
+<div class="row event_list">
+    {% for categorie in categories%}
+    <div class="col-md-4 text-center">
+        <h2 id="h2_cat_sujet">{{categorie.nom}}</h2>
 
-                {% if vote.vote == -1%}
-                    <span style="color:red;"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</span>
-                {% else %}
-                    <a href="#" onclick="vote('{{ sujet.id }}', 'down');"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</a>
-                {% endif %}
+            <ul>
+                {% for sujet in object_list%}
+                {% vote_by_user request.user on sujet as vote %}
+                {%if sujet.categorie == categorie%}
+                <li><p>
+                    {{sujet.subject}}
+                </p>
+
+                </li>
+
+
+        <li class="li_event_list">
+            {% if request.user.is_authenticated %}
+            {% if vote.vote == 1%}
+            <span style="color:red;"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</span>
+            {% else %}
+            <a href="#" onclick="vote('{{ sujet.id }}', 'up');"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</a>
+            {% endif %}
+
+            {% if vote.vote == -1%}
+            <span style="color:red;"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</span>
+            {% else %}
+            <a href="#" onclick="vote('{{ sujet.id }}', 'down');"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</a>
+            {% endif %}
             {% endif %}
             <a href="#" onclick="vote('{{ sujet.id }}', 'clear');"><i class="fa fa-hand-o-left" aria-hidden="true"></i>0</a>
+            {% score_for_object sujet as score %}
+            <span id="score{{sujet.id}}">{{ score.score }}</span>/<span id="num_votes{{sujet.id}}">{{ score.num_votes }}</span>
+            <hr>
         </li>
         {% endif %}
         {% endfor %}
