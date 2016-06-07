@@ -3,22 +3,22 @@
 {% load staticfiles %}
 
 {% block content %}
-<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.min.js' %} "></script>
+
 <h1>Votez !</h1>
-<div class="row event_list">
+<div class="row" id="border_savoir">
     {% for categorie in categories%}
     <div class="col-md-4 text-center">
         <h2 id="h2_cat_sujet">{{categorie.nom}}</h2>
 
-            <ul>
-                {% for sujet in object_list%}
-                {% vote_by_user request.user on sujet as vote %}
-                {%if sujet.categorie == categorie%}
-                <li><p>
-                    {{sujet.subject}}
-                </p>
+        <ul>
+            {% for sujet in object_list%}
+            {% vote_by_user request.user on sujet as vote %}
+            {%if sujet.categorie == categorie%}
+            <li><p>
+                {{sujet.subject}}
+            </p>
 
-                </li>
+        </li>
 
 
         <li class="li_event_list">
@@ -36,8 +36,10 @@
             {% endif %}
             {% endif %}
             <a href="#" onclick="vote('{{ sujet.id }}', 'clear');"><i class="fa fa-hand-o-left" aria-hidden="true"></i>0</a>
-            {% score_for_object sujet as score %}
-            <span id="score{{sujet.id}}">{{ score.score }}</span>/<span id="num_votes{{sujet.id}}">{{ score.num_votes }}</span>
+            <div class="span_event_list">
+                {% score_for_object sujet as score %}
+                <span id="score{{sujet.id}}">{{ score.score }}</span>/<span id="num_votes{{sujet.id}}">{{ score.num_votes }}</span>
+            </div>
             <hr>
         </li>
         {% endif %}
@@ -65,7 +67,7 @@ function getCookie(name) {
 function vote(id, direction) {
     $.ajax({
         type: "POST",
-        url: "/test/sujet/vote/"+id+"/"+direction+'vote/',
+        url: "/savoirs/vote/"+id+"/"+direction+'vote/',
         headers : {
             "HTTP_X_REQUESTED":'XMLHttpRequest',
             "X-CSRFToken" : getCookie('csrftoken'),

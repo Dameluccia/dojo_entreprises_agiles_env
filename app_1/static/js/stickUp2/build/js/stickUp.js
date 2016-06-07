@@ -28,7 +28,7 @@
             custom:[]
         },
         left,
-        
+
         //defaults
         options = {
             scrollHide: false,
@@ -44,7 +44,7 @@
                 return true;
             }
         },
-                
+
         getTopMargin = function () {
             if (options.topMargin === 'auto') {
                 return parseInt($element.css('marginTop'));
@@ -59,19 +59,19 @@
                 }
             }
         },
-                
+
         unStick = function(){
             void 0;
             $placeholder.remove();
             $element.removeClass(options.fixedClass)
-            .css({ 
+            .css({
                 maxWidth:"",
-                marginTop: "", 
+                marginTop: "",
                 marginLeft:"",
                 marginRight:"",
                 position: "",
                 top: "",
-                left: "", 
+                left: "",
                 right: "",
                 bottom:"",
                 width: ""
@@ -82,17 +82,17 @@
             if(options.syncPosition)
                 syncMargins();
         },
-                
+
         holdIt = function(forceBottom){
             void 0;
             $element.before($placeholder.css('height', outerHeight));
             var offsetParent = $placeholder.offsetParent();
-            
+
             if (forceBottom){
                 $element.css({
                     position: "absolute"
                 });
-                var topOffset = 
+                var topOffset =
                     ($parent.offset().top + $parent.outerHeight()) //bottom of container
                     - offsetParent.offset().top - currentOuterHeight //parent-position - elementHeight
                     - parseInt($parent.css("paddingBottom"));
@@ -200,7 +200,7 @@
             else
                 stickpoints.bottom = $(document).outerHeight();
             elementOffsetBottom = $element.offset().top+currentOuterHeight;
-            
+
             if(stickyHeight>viewportHeight){
                 portrait = true;
                 if(landscape){
@@ -226,8 +226,8 @@
                     active = true;
                     hold = false;
                 }
-                if(!hold && active && bottom && scrollDir === 'up' 
-                || !hold && active && !bottom && scrollDir === 'down' 
+                if(!hold && active && bottom && scrollDir === 'up'
+                || !hold && active && !bottom && scrollDir === 'down'
                 && elementOffsetBottom >= scrollBottom){
                     void 0;
                     holdIt();
@@ -257,8 +257,8 @@
                     offset = stickyHeight + options.lazyHeight; //negative offset for initial hiding
                 else
                     offset = options.lazyHeight;
-                
-                if(!active && !bottom && scroll >= stickpoints.top - topMargin + offset 
+
+                if(!active && !bottom && scroll >= stickpoints.top - topMargin + offset
                 || bottom && hold && scroll <= elementOffset - topMargin + offset){
                     void 0;
                     stickIt();
@@ -296,7 +296,7 @@
             //RESPONSIVE baby ;-)
 			if(active || hold || bottom)
 				syncWidth();
-            
+
             //Special cases which need a specified position like margin:0 centered elements
             if(options.syncPosition && active || hold)
 				syncPosition();
@@ -320,7 +320,7 @@
             //getting options
             if (opts) {
                 $.extend(true, options, opts);
-            } 
+            }
             topMargin = (options.topMargin !== null) ? getTopMargin() : 0;
             if(options.lazyHeight)
                 topMargin = topMargin + options.lazyHeight;
@@ -335,11 +335,11 @@
             }
             if(options.zIndex)
                 $element.css('z-index',options.zIndex);
-            
+
             if(syncPosition){
                 syncMargins();
             }
-            
+
             $(window).on('scroll.stickUp', stickUpScrollHandlerFn);
             $(window).on('resize.stickUp', stickUpResponsiveHandlerFn);
             //initial round ;-)
