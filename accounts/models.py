@@ -20,8 +20,8 @@ class MyProfile(UserenaBaseProfile):
     prenom = models.CharField(max_length=50)
     nom_activite = models.CharField(max_length=50)
     adresse_activite = models.CharField(max_length=100)
-    description = models.CharField(max_length=200)
-    website = models.URLField(max_length=200)
+    description = models.CharField(max_length=200, blank=True)
+    website = models.URLField(max_length=200,blank=True)
     contact_mail = models.EmailField(max_length=254, blank=True)
 
     gps = PointField(null=True, blank=True)

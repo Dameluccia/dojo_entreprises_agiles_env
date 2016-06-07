@@ -45,6 +45,7 @@ h2, h3 {
 .navbar-default {
   font-size: 1.5em;
   border: none;
+  z-index: 999 !important;
 }
 
 .navbar-default .navbar-nav li a {
@@ -64,7 +65,7 @@ div.background_header img {
 }
 
 form {
-  border: 2px solid #FF630F;
+  border: 5px solid #FF630F;
   border-radius: 10px;
   width: 50%;
   margin: auto;
@@ -73,21 +74,20 @@ form {
   padding: 2em 1em;
   color: #326e8c;
 }
-form button {
+form button, form .input_button {
   text-align: center;
   padding: 10px;
-  border: 2px solid #326e8c;
+  border: 5px solid #326e8c;
   color: #326e8c;
   border-radius: 5px;
   background-color: white;
 }
-form button:hover {
+form button:hover, form .input_button:hover {
   background-color: #326e8c;
   color: white;
 }
 form input {
   border-radius: 5px;
-  display: list-item;
 }
 form label {
   display: table;
@@ -109,7 +109,7 @@ ul li {
 .thumbnail {
   text-align: center;
   padding: 3em;
-  border: 2px solid #326e8c;
+  border: 5px solid #326e8c;
   background-color: #F8F8F8;
 }
 .thumbnail i {
@@ -125,25 +125,27 @@ ul li {
 }
 
 .storyjs-embed.sized-embed {
-  border: 2px solid #FF630F !important;
+  border: 5px solid #FF630F !important;
 }
 
 .leaflet-container-default {
   min-height: 300px;
-  border: 2px #FF630F solid;
+  border: 5px #FF630F solid;
   border-radius: 5px;
   padding: 1em;
 }
 
+@media screen and (max-width: 668px) {
+  .leaflet-container-default {
+    width: 100%;
+  }
+}
 .panel-default {
-  border: 2px solid #FF630F;
+  border: 5px solid #FF630F;
 }
 .panel-default a {
   color: #326e8c;
   text-transform: uppercase;
-}
-.panel-default .panel-body {
-  height: 7em;
 }
 .panel-default > .panel-heading {
   color: #FF630F;
@@ -153,13 +155,40 @@ ul li {
   text-align: center;
   font-size: 1.5em;
   margin: 2em;
+  padding: 2em;
+  border: 5px solid #FF630F;
+}
+.white-box li a {
+  font-size: 20px;
+}
+
+a:hover {
+  color: #FF630F !important;
+  text-decoration: none;
 }
 
 .event_list {
-  margin: 13px;
-  border: 9px double #326e8c;
+  margin: 35px -50px;
+  border: 5px solid #326e8c;
   border-radius: 5px;
   padding: 10px;
+}
+
+.span_event_list {
+  font-size: 24px;
+  color: #326e8c;
+  border: 3px solid #FF630F;
+  width: 19%;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#border_savoir {
+  border: 5px solid #326e8c;
+  margin: 0 20px;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 footer {
