@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
-
 from accounts.models import MyProfile
+from django.views.generic.list import ListView
+
 from timelinejs.models import Timeline, TimelineEvent
 from forms import ContactForm
+from models import Inscription
+
 
 
 def homepage(request):
@@ -19,6 +22,7 @@ def homepage(request):
                         {"timeline_event_next":timeline_event[0], "timeline_event_last":timeline_event[1]})
     else :
         return render(request, 'homepage.html')
+
 
 
 def discussions(request):
@@ -49,3 +53,17 @@ def contact(request):
     else:
         contact_form = ContactForm()
     return render(request, "contact.html", {"form":contact_form})
+
+
+
+def event_inscription(request,pk):
+    message = ""
+    if request.user.is_authenticated():
+        choice_event = TimelineEvent.objects.get(id=pk)
+        inscription, created = Inscription.objects.get_or_create(user=request.user.my_profile,
+                                                 choice_event= choice_event)
+        if not created:
+            message = "Deja inscrit"
+        else:
+            message = " Merci pour l'inscription "
+    return render(request,"event.html", {"message": message})
