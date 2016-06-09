@@ -1,6 +1,7 @@
 bower_components
-*.pyc
 media
+.sass-cache
+*.pyc
 *.db
 *.sqlite3
 mon_site/site_settings.py
