@@ -57,9 +57,18 @@ div.background_header img {
     width: 100%;
 }
 //signup form
+button, .input_button, .btn {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #326e8c;
+    color: #326e8c;
+    margin-top: 1em;
+    border-radius: 1px;
+    background-color: white;
+}
 
 form {
-    border:5px solid #FF630F;
+    border:1px solid #FF630F;
     border-radius: 10px;
     width: 50%;
     margin: auto;
@@ -67,44 +76,40 @@ form {
     text-align: center;
     padding:2em 1em;
     color: #326e8c;
-    button, .input_button {
-        text-align: center;
-        padding: 10px;
-        border: 5px solid #326e8c;
-        color: #326e8c;
-        border-radius: 5px;
-        background-color: white;
     }
-    button:hover, .input_button:hover{
+    button:hover, .input_button:hover, .btn:hover{
         background-color: #326e8c;
-        color: white;
+        color: white!important;
+    }
+    textarea{
+        width: 100%;
     }
     input {
-        border-radius: 5px;
+        border-radius: 1px;
+        margin-bottom: 1em;
 
     }
-    label {
-        display: table;
+    input[type=file]{
+        margin: auto;
     }
+
     legend{
         color: #326e8c;
 
     }
-    p {
-        text-align: -webkit-center;
-    }
-}
+
 ul {
     padding: 0;
     li {
         list-style-type: none;
     }
 }
+
 //font-awesome
 .thumbnail {
     text-align: center;
     padding: 3em;
-    border: 5px solid #326e8c;
+    border: 1px solid #326e8c;
     background-color:  #F8F8F8;
     i{
         color: #FF630F;
@@ -118,14 +123,14 @@ ul {
     height: 17em;
 }
 .storyjs-embed.sized-embed{
-    border: 5px solid  #FF630F!important;
+    border: 1px solid  #FF630F!important;
 }
 //leaflet
 
 .leaflet-container-default {
     min-height: 300px;
-    border: 5px #FF630F solid;
-    border-radius: 5px;
+    border: 1px #FF630F solid;
+    border-radius: 1px;
     padding: 1em;
 }
 @media screen and (max-width: 668px){
@@ -140,7 +145,7 @@ ul {
         color:#326e8c;
         text-transform: uppercase;
     }
-    border: 5px solid #FF630F;
+    border: 1px solid #FF630F;
 
    >.panel-heading{
         color:#FF630F;
@@ -154,7 +159,7 @@ ul {
     font-size: 1.5em;
     margin: 2em;
     padding: 2em;
-    border: 5px solid #FF630F;
+    border: 1px solid #FF630F;
     li a{
         font-size: 20px;
 
@@ -165,9 +170,9 @@ a:hover{
     text-decoration: none;
 }
 .event_list{
-    margin: 35px -50px;
-    border: 5px solid #326e8c;
-    border-radius: 5px;
+    margin: 31px -50px;
+    border: 1px solid #326e8c;
+    border-radius: 1px;
     padding: 10px;
 }
 .span_event_list{
@@ -176,13 +181,13 @@ a:hover{
     border: 3px solid #FF630F;
     width: 19%;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 1px;
     margin-top: 20px;
 }
 #border_savoir{
-    border: 5px solid #326e8c;
+    border: 1px solid #326e8c;
     margin: 0 20px;
-    border-radius: 5px;
+    border-radius: 1px;
     font-size: 18px;
 
 }

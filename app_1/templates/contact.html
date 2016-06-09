@@ -9,16 +9,23 @@
     <fieldset>
         <legend>Contact</legend>
         {% for field in form %}
-        <p>
-            {{ field.label_tag }}
-            {{ field }}
+        <div class="div_form_contact">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-1">
+                    {{ field.label_tag }}
+
+                </div>
+                <div class="col-md-6">
+                    {{ field }}
+                </div>
+            </div>
             {{ field.errors }}
             {% if field.help_text %}
                 <p class="help-text">
                     {{ field.help_text }}
                 </p>
             {% endif %}
-        </p>
+        </div>
         {% endfor %}
         <button type="submit">Envoyer</button>
     </fieldset>

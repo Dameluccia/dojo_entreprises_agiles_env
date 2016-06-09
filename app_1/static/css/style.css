@@ -64,8 +64,18 @@ div.background_header img {
   width: 100%;
 }
 
+button, .input_button, .btn {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #326e8c;
+  color: #326e8c;
+  margin-top: 1em;
+  border-radius: 1px;
+  background-color: white;
+}
+
 form {
-  border: 5px solid #FF630F;
+  border: 1px solid #FF630F;
   border-radius: 10px;
   width: 50%;
   margin: auto;
@@ -74,29 +84,27 @@ form {
   padding: 2em 1em;
   color: #326e8c;
 }
-form button, form .input_button {
-  text-align: center;
-  padding: 10px;
-  border: 5px solid #326e8c;
-  color: #326e8c;
-  border-radius: 5px;
-  background-color: white;
-}
-form button:hover, form .input_button:hover {
+
+button:hover, .input_button:hover, .btn:hover {
   background-color: #326e8c;
-  color: white;
+  color: white !important;
 }
-form input {
-  border-radius: 5px;
+
+textarea {
+  width: 100%;
 }
-form label {
-  display: table;
+
+input {
+  border-radius: 1px;
+  margin-bottom: 1em;
 }
-form legend {
+
+input[type=file] {
+  margin: auto;
+}
+
+legend {
   color: #326e8c;
-}
-form p {
-  text-align: -webkit-center;
 }
 
 ul {
@@ -109,7 +117,7 @@ ul li {
 .thumbnail {
   text-align: center;
   padding: 3em;
-  border: 5px solid #326e8c;
+  border: 1px solid #326e8c;
   background-color: #F8F8F8;
 }
 .thumbnail i {
@@ -125,13 +133,13 @@ ul li {
 }
 
 .storyjs-embed.sized-embed {
-  border: 5px solid #FF630F !important;
+  border: 1px solid #FF630F !important;
 }
 
 .leaflet-container-default {
   min-height: 300px;
-  border: 5px #FF630F solid;
-  border-radius: 5px;
+  border: 1px #FF630F solid;
+  border-radius: 1px;
   padding: 1em;
 }
 
@@ -141,7 +149,7 @@ ul li {
   }
 }
 .panel-default {
-  border: 5px solid #FF630F;
+  border: 1px solid #FF630F;
 }
 .panel-default a {
   color: #326e8c;
@@ -156,7 +164,7 @@ ul li {
   font-size: 1.5em;
   margin: 2em;
   padding: 2em;
-  border: 5px solid #FF630F;
+  border: 1px solid #FF630F;
 }
 .white-box li a {
   font-size: 20px;
@@ -168,9 +176,9 @@ a:hover {
 }
 
 .event_list {
-  margin: 35px -50px;
-  border: 5px solid #326e8c;
-  border-radius: 5px;
+  margin: 31px -50px;
+  border: 1px solid #326e8c;
+  border-radius: 1px;
   padding: 10px;
 }
 
@@ -180,14 +188,14 @@ a:hover {
   border: 3px solid #FF630F;
   width: 19%;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 1px;
   margin-top: 20px;
 }
 
 #border_savoir {
-  border: 5px solid #326e8c;
+  border: 1px solid #326e8c;
   margin: 0 20px;
-  border-radius: 5px;
+  border-radius: 1px;
   font-size: 18px;
 }
 
