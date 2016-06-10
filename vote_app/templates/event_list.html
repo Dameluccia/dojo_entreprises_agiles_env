@@ -24,13 +24,13 @@
         <li class="li_event_list">
             {% if request.user.is_authenticated %}
             {% if vote.vote == 1%}
-            <span style="color:red;"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</span>
+            <i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</span>
             {% else %}
             <a href="#" onclick="vote('{{ sujet.id }}', 'up');"><i class="fa fa-hand-o-up" aria-hidden="true"></i>+1</a>
             {% endif %}
 
             {% if vote.vote == -1%}
-            <span style="color:red;"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</span>
+            <i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</span>
             {% else %}
             <a href="#" onclick="vote('{{ sujet.id }}', 'down');"><i class="fa fa-hand-o-down" aria-hidden="true"></i>-1</a>
             {% endif %}

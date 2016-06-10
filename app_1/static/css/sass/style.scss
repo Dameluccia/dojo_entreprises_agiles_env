@@ -1,17 +1,14 @@
-.leaflet-container-default {  /* all maps */
-    position: relative;
-    width: 95em;
-    margin: auto;
 
-}
 * {
     padding: 0px;
     margin:0px;
     font-family: 'Titillium Web', sans-serif;
 
 }
+
 .width_main{
     padding: 0 20px;
+
 }
 body{
     color:#3A3A3A;
@@ -53,23 +50,46 @@ h2,h3{
         padding-top: 8px;
     }
 }
+@media screen and (max-width:650px){
+
+    .navbar-brand img{
+        width: 230px;
+    }
+}
 div.background_header img {
     width: 100%;
 }
 //signup form
-button, .input_button, .btn {
+button, .input_button, .a_homepage {
     text-align: center;
     padding: 10px;
     border: 1px solid #326e8c;
     color: #326e8c;
     margin-top: 1em;
-    border-radius: 1px;
     background-color: white;
 }
+.a_homepage{
+    line-height: 5em;
+}
+.texte_homepage{
+    text-align: -webkit-center;
+    font-size: 1.5em;
+    padding: 2em 3em;
+    border: 1px solid #FF630F;
+    margin: 2.5em 0.6em;
+    background-color: #F8F8F8;
+}
+input {
+    margin-bottom: 1em;
 
+    @media screen and (max-width: 668px){
+
+        width: 100%;
+    }
+}
 form {
     border:1px solid #FF630F;
-    border-radius: 10px;
+
     width: 50%;
     margin: auto;
     margin-top: 40px;
@@ -77,18 +97,14 @@ form {
     padding:2em 1em;
     color: #326e8c;
     }
-    button:hover, .input_button:hover, .btn:hover{
+    button:hover, .input_button:hover, .a_homepage:hover{
         background-color: #326e8c;
         color: white!important;
     }
     textarea{
         width: 100%;
     }
-    input {
-        border-radius: 1px;
-        margin-bottom: 1em;
 
-    }
     input[type=file]{
         margin: auto;
     }
@@ -105,12 +121,16 @@ ul {
     }
 }
 
+//twitter
+
+
 //font-awesome
 .thumbnail {
     text-align: center;
     padding: 3em;
     border: 1px solid #326e8c;
     background-color:  #F8F8F8;
+    border-radius: 0;
     i{
         color: #FF630F;
         margin: auto;
@@ -123,14 +143,24 @@ ul {
     height: 17em;
 }
 .storyjs-embed.sized-embed{
+    border-radius:0;
     border: 1px solid  #FF630F!important;
+    background-color: #F8F8F8!important;
+
+    .vco-slider{
+        background-color: #F8F8F8!important;
+
+    }
+
 }
 //leaflet
 
 .leaflet-container-default {
     min-height: 300px;
     border: 1px #FF630F solid;
-    border-radius: 1px;
+    position: relative;
+    width: 95em;
+    margin: auto;
     padding: 1em;
 }
 @media screen and (max-width: 668px){
@@ -170,10 +200,11 @@ a:hover{
     text-decoration: none;
 }
 .event_list{
-    margin: 31px -50px;
+    margin: 31px 0;
     border: 1px solid #326e8c;
-    border-radius: 1px;
+
     padding: 10px;
+    background-color: #F8F8F8!important;
 }
 .span_event_list{
     font-size: 24px;
@@ -181,13 +212,13 @@ a:hover{
     border: 3px solid #FF630F;
     width: 19%;
     margin: auto;
-    border-radius: 1px;
+
     margin-top: 20px;
 }
 #border_savoir{
     border: 1px solid #326e8c;
     margin: 0 20px;
-    border-radius: 1px;
+
     font-size: 18px;
 
 }

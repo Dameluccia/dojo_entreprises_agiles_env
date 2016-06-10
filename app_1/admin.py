@@ -10,15 +10,15 @@ class InscriptionAdmin(admin.ModelAdmin):
 
     def id(self, obj):
         return obj.user.id
-        id.admin_order_field  = 'user'  #Allows column order sorting
-        id.short_description = 'Id'
+    id.admin_order_field  = 'user'  #Allows column order sorting
+    id.short_description = 'Id'
     def nom(self, obj):
         return obj.user.nom
-        nom.admin_order_field  = 'user'  #Allows column order sorting
-        nom.short_description = 'Nom'
+    nom.admin_order_field  = 'user'  #Allows column order sorting
+    nom.short_description = 'Nom'
     def prenom(self, obj):
         return obj.user.prenom
-        prenom.admin_order_field  = 'user'  #Allows column order sorting
-        prenom.short_description = 'Prenom'
+    prenom.admin_order_field  = 'user'  #Allows column order sorting
+    prenom.short_description = 'Prenom'
 
 admin.site.register(Inscription, InscriptionAdmin)

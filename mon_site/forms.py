@@ -5,13 +5,10 @@ from userena.forms import SignupFormOnlyEmail
 # from models import MyProfile
 
 class SignupFormExtra(SignupFormOnlyEmail):
-    prenom = forms.CharField(label=_(u'Prenom'),
-                                 max_length=30,
-                                 required=False)
-
     nom = forms.CharField(label=_(u'Nom'),
-                                max_length=30,
-                                required=False)
+                                    max_length=50)
+    prenom = forms.CharField(label=_(u'Prenom'),
+                                    max_length=50)
     nomActivite = forms.CharField(label=_(u'Activite'),
                                     max_length=50)
     adresseActivite = forms.CharField(label=_(u'Adresse activite'),
@@ -25,21 +22,16 @@ class SignupFormExtra(SignupFormOnlyEmail):
 
 
     def save(self):
-        """
-        Override the save method to save the first and last name to the user
-        field.
-
-        """
-        # First save the parent form and get the user.
         new_user = super(SignupFormExtra, self).save()
-
-        # Get the profile, the `save` method above creates a profile for each
-        # user because it calls the manager method `create_user`.
-        # See: https://github.com/bread-and-pepper/django-userena/blob/master/userena/managers.py#L65
-        user_profile = new_user.get_profile()
+        new_user.first_name = self.cleaned_data['nom']
+        new_user.last_name = self.cleaned_data['prenom']
+        new_user.save()
         
-        user_profile.prenom = self.cleaned_data['prenom']
-        user_profile.nom = self.cleaned_data['nom']
+        user_profile = new_user.my_profile
+        user_profile.nom_activite = self.cleaned_data['nomActivite']
+        user_profile.adresse_activite = self.cleaned_data['adresseActivite']
+        user_profile.description = self.cleaned_data['description']
+        user_profile.website = self.cleaned_data['website']
         user_profile.save()
 
         # Userena expects to get the new user from this form, so return the new

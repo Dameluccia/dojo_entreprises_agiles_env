@@ -16,8 +16,6 @@ class MyProfile(UserenaBaseProfile):
                                 verbose_name=_('user'),
                                 related_name='my_profile') #null=True
 
-    nom = models.CharField(max_length=50)
-    prenom = models.CharField(max_length=50)
     nom_activite = models.CharField(max_length=50)
     adresse_activite = models.CharField(max_length=100)
     description = models.CharField(max_length=39, blank=True)
@@ -29,6 +27,14 @@ class MyProfile(UserenaBaseProfile):
 
     def __unicode__(self):
         return "%s %s %s %s %s %s %s" % (self.nom,self.prenom,self.nom_activite,self.adresse_activite,self.description,self.website,self.contact_mail)
+
+    @property
+    def nom(self):
+        return self.user.last_name
+
+    @property
+    def prenom(self):
+        return self.user.first_name
 
 @receiver(pre_save, sender=MyProfile)
 def address_geocoding(sender,instance,**kwargs):

@@ -7,6 +7,17 @@
 {% block content %}
 
 <h1>Accueil</h1>
+<div class="texte_homepage">
+    A l'image des BarCamp, Agile Tour... cet espace a pour but d'organiser des moments de rencontre sur des thématiques / ateliers, permettant de nous améliorer sur des pratiques business, tout simplement basé sur notre expérience.
+
+    <ul>
+        Notre particularité?
+        <li>Situé en Lozère</li>
+        <li>Gratuite</li>
+        <li>Basé sur le bon sens et l'échange des expériences.</li>
+    </ul>
+    A l'image d'un entraînement sportif (dojo), nous nous rencontrons dans des lieux ouverts au public, pour faciliter les échanges et surtout perçevoir les évolutions de nos environnements professionels.
+</div>
 <div class="container-fluid">
    <div class="row">
        <div class="col-md-6">
@@ -15,7 +26,7 @@
                <h3>Dernier évènement</h3>
                <div class="caption">
                    <p>{{timeline_event_last.text|safe|slice:":200"}}[...]</p>
-                   <p><a href="{% url 'discussions'%}#{{timeline_event_last.id|safe}}" class="btn btn-primary" role="button">Voir la suite</a>
+                   <p><a href="{% url 'discussions'%}#{{timeline_event_last.id|safe}}" class="a_homepage" role="button">Voir la suite</a>
                    </div>
                </div>
            </div>
@@ -26,8 +37,8 @@
                    <div class="caption">
                        <p>{{timeline_event_next.text|safe|slice:":200"}}[...]</p>
                        <p>
-                           <a href="{% url 'discussions'%}#{{timeline_event_next.id|safe}}" class="btn btn-primary" role="button">Voir la suite</a>
-                           <a href="{% url 'event' timeline_event_next.id %}" class="btn btn-default" role="button">S'inscrire</a></p>
+                           <a href="{% url 'discussions'%}#{{timeline_event_next.id|safe}}" role="button" class="a_homepage">Voir la suite</a>
+                           <a href="{% url 'event' timeline_event_next.id %}" role="button" class="a_homepage">S'inscrire</a></p>
                    </div>
                </div>
            </div>

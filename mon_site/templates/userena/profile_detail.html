@@ -9,20 +9,31 @@
     {% block profile_navigation %}
       {% comment %}Dirty hack. Will use django-guardian in the future.{% endcomment %}
       {% if user.username == profile.user.username %}
-        <ul id="box-nav">
-          {% block profile_navigation_items %}
-            <li><a href="{% url 'userena_profile_detail' user.username %}">{% trans "View profile" %} <i class="fa fa-eye" aria-hidden="true"></i></a></li>
-            <li><a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit details" %} <i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-            <li><a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %} <i class="fa fa-lock" aria-hidden="true"></i></a></li>
-            <li><a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %} <i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-          {% endblock %}
-        </ul>
+      <div class="row">
+          <div class="col-md-4 col-md-offset-1">
+              <img class="mugshot" src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
+
+          </div>
+          <div class="col-md-6">
+
+              <ul id="box-nav">
+                  {% block profile_navigation_items %}
+                  <!-- <li><a href="{% url 'userena_profile_detail' user.username %}">{% trans "View profile" %} <i class="fa fa-eye" aria-hidden="true"></i></a></li> -->
+                  <li><a href="{% url 'userena_profile_edit' user.username %}">{% trans "Edit details" %} <i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                  <li><a href="{% url 'userena_password_change' user.username %}">{% trans "Change password" %} <i class="fa fa-lock" aria-hidden="true"></i></a></li>
+                  <li><a href="{% url 'userena_email_change' user.username %}">{% trans "Change email" %} <i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                  {% endblock %}
+              </ul>
+          </div>
+
       {% endif %}
     {% endblock %}
 
     <div id="details">
-      {% block profile_details %}
-        <img class="mugshot" src="{{ profile.get_mugshot_url }}" alt="{% trans "Your mugshot" %}" />
+
+
+            {% block profile_details %}
+        </div>
         <dl>
           {% block profile_definition_list %}
             {% if profile.user.get_full_name %}
