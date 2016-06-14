@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'timelinejs',
     'ckeditor',
     'ckeditor_uploader',
+    "django_extensions",
     'leaflet',
     'voting',
     'vote_app'
