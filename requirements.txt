@@ -7,7 +7,7 @@ django-ckeditor==5.0.3
 django-guardian==1.4.1
 -e git+https://github.com/makinacorpus/django-leaflet.git@9c3bca655e40306f96a45618aa1d296f1bea8316#egg=django_leaflet-master
 django-userena==2.0.1
-django-voting==0.2
+django-voting==0.3.dev49+ng788ccec
 easy-thumbnails==2.3
 geopy==1.11.0
 html2text==2014.12.29
