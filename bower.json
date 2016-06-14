@@ -1,0 +1,22 @@
+{
+  "name": "Dojo Agile",
+  "homepage": "https://github.com/Dameluccia/dojo_entreprises_agiles_env",
+  "authors": [
+    "Dameluccia <lucieanaisbarthes@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
