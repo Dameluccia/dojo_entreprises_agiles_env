@@ -67,3 +67,6 @@ def event_inscription(request,pk):
         else:
             message = " Merci pour l'inscription "
     return render(request,"event.html", {"message": message})
+
+def mention(request):
+    return render(request, "mention.html")

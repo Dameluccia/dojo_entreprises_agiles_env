@@ -1,7 +1,7 @@
 from django.conf.urls import *
 from django.views.generic import TemplateView
 
-from views import homepage, discussions, portrait, savoirs, contact,event_inscription
+from views import homepage, discussions, portrait, savoirs, contact,event_inscription,mention
 
 from timelinejs.views import TimelineView
 from timelinejs.models import TimelineEvent
@@ -14,6 +14,8 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$', TimelineView.as_view(), name='timelineview'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^portrait$', portrait, name='portrait'),
+    url(r'^mention$', mention, name='mention'),
+
 
     # url(r'^savoirs$', savoirs, name='savoirs'),
 
