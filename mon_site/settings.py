@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-from site_settings import DATABASES
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +30,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DATABASES = {
+   'default': {
+       'NAME': 'dojoagile',
+       'ENGINE': 'django.contrib.gis.db.backends.mysql',
+       'USER': 'dbdojo',
+       'PASSWORD': 'dbd0j048',
+       'HOST': 'localhost',
 
+   }
+}
 # Application definition
 
 INSTALLED_APPS = [
