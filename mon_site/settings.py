@@ -26,9 +26,9 @@ TIME_ZONE = 'CET'
 SECRET_KEY = '4-!7gd%^6n5ztol03$3$tjkjvplj&568@kdiw&b=cwnnpb5_oh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["vps290046.ovh.net","dojoentreprisesagiles.fr"]
 
 DATABASES = {
    'default': {
@@ -151,10 +151,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/web/dojo_env/static'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+    #os.path.join(BASE_DIR,'static'),
 )
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
