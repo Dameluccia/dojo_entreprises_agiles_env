@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-
 from django.db import models
 from django.dispatch import receiver
 from django.contrib.gis.db.models import PointField, GeoManager
